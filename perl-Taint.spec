@@ -28,7 +28,7 @@ check data for taint. To remove the taint from data, use the method
 described in perlsec(1), or use the make_extractor routine.
 
 %description -l pl
-Perl ma mo¿liwo¶æ oznaczenia danych jako "napiêtnowane" zgodznie z
+Perl ma mo¿liwo¶æ oznaczenia danych jako "napiêtnowane" zgodnie z
 opisem w perlsec(1). Interpreter nie pozwala na u¿ywanie
 napiêtnowanych danych w niektórych operacjach, a mo¿emy chcieæ dodaæ
 taki warunek w swoim kodzie. Funkcje z tego modu³u udostêpniaj±
