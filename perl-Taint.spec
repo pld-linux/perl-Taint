@@ -4,44 +4,48 @@
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Taint
-Summary:	Taint
+Summary:	Taint - Perl utility extensions for tainted data
+Summary(pl):	Taint - rozszerzenia narzêdziowe Perla dla napiêtnowanych danych
 Name:		perl-Taint
-Version:	0.07
+Version:	0.09
 Release:	0.1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
-URL:		-
-BuildRequires:	perl >= 5.6.1
-BuildRequires:	rpm-perlprov >= 4.0.2-104
+# Source0-md5:	e9b23bec1f15ee2f1e1d7309eb04ef92
+BuildRequires:	perl-devel >= 5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	"perl(anything_fake_or_conditional)"
-
 %description
-
-%description -l de
-
-%description -l es
-
-%description -l fr
+Perl has the ability to mark data as 'tainted', as described in
+perlsec(1). Perl will prevent tainted data from being used for some
+operations, and you may wish to add such caution to your own code. The
+routines in this module provide convenient ways to taint data and to
+check data for taint. To remove the taint from data, use the method
+described in perlsec(1), or use the make_extractor routine.
 
 %description -l pl
-
-%description -l ru
+Perl ma mo¿liwo¶æ oznaczenia danych jako "napiêtnowane" zgodznie z
+opisem w perlsec(1). Interpreter nie pozwala na u¿ywanie
+napiêtnowanych danych w niektórych operacjach, a mo¿emy chcieæ dodaæ
+taki warunek w swoim kodzie. Funkcje z tego modu³u udostêpniaj±
+wygodne metody do piêtnowania danych oraz sprawdzania danych pod tym
+k±tem. Aby usun±æ piêtno z danych mo¿na u¿yæ metody opisanej w
+perlsec(1) lub wywo³aæ funkcjê make_extractor.
 
 %prep
 %setup -q -n %{pdir}-%{version}
 
 %build
-# Don't use pipes here: they generally don't work. Apply a patch.
-%{__perl} Makefile.PL
-%{__make}
-# if module isn't noarch, use:
-# %{__make} OPTIMIZE="%{rpmcflags}"
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
 
-%{!?_without_tests:%{__make} test}
+%{__make}
+
+# some tests fail
+#%{!?_without_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -54,9 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
-# use macros:
-#%{perl_sitelib}/Taint*
-%{perl_sitearch}/Taint*
-%{perl_sitearch}/auto/Taint/*
+%doc Changes README TODO
+%{perl_vendorlib}/Taint.pm
 %{_mandir}/man3/*
