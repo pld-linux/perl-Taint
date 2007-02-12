@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Taint
 Summary:	Taint - Perl utility extensions for tainted data
-Summary(pl):	Taint - rozszerzenia narzêdziowe Perla dla napiêtnowanych danych
+Summary(pl.UTF-8):   Taint - rozszerzenia narzÄ™dziowe Perla dla napiÄ™tnowanych danych
 Name:		perl-Taint
 Version:	0.09
 Release:	0.1
@@ -27,14 +27,14 @@ routines in this module provide convenient ways to taint data and to
 check data for taint. To remove the taint from data, use the method
 described in perlsec(1), or use the make_extractor routine.
 
-%description -l pl
-Perl ma mo¿liwo¶æ oznaczenia danych jako "napiêtnowane" zgodnie z
-opisem w perlsec(1). Interpreter nie pozwala na u¿ywanie
-napiêtnowanych danych w niektórych operacjach, a mo¿emy chcieæ dodaæ
-taki warunek w swoim kodzie. Funkcje z tego modu³u udostêpniaj±
-wygodne metody do piêtnowania danych oraz sprawdzania danych pod tym
-k±tem. Aby usun±æ piêtno z danych mo¿na u¿yæ metody opisanej w
-perlsec(1) lub wywo³aæ funkcjê make_extractor.
+%description -l pl.UTF-8
+Perl ma moÅ¼liwoÅ›Ä‡ oznaczenia danych jako "napiÄ™tnowane" zgodnie z
+opisem w perlsec(1). Interpreter nie pozwala na uÅ¼ywanie
+napiÄ™tnowanych danych w niektÃ³rych operacjach, a moÅ¼emy chcieÄ‡ dodaÄ‡
+taki warunek w swoim kodzie. Funkcje z tego moduÅ‚u udostÄ™pniajÄ…
+wygodne metody do piÄ™tnowania danych oraz sprawdzania danych pod tym
+kÄ…tem. Aby usunÄ…Ä‡ piÄ™tno z danych moÅ¼na uÅ¼yÄ‡ metody opisanej w
+perlsec(1) lub wywoÅ‚aÄ‡ funkcjÄ™ make_extractor.
 
 %prep
 %setup -q -n %{pdir}-%{version}
