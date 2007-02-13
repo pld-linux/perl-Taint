@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Taint
 Summary:	Taint - Perl utility extensions for tainted data
-Summary(pl.UTF-8):   Taint - rozszerzenia narzędziowe Perla dla napiętnowanych danych
+Summary(pl.UTF-8):	Taint - rozszerzenia narzędziowe Perla dla napiętnowanych danych
 Name:		perl-Taint
 Version:	0.09
 Release:	0.1
