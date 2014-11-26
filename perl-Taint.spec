@@ -1,9 +1,9 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	Taint
+%include	/usr/lib/rpm/macros.perl
 Summary:	Taint - Perl utility extensions for tainted data
 Summary(pl.UTF-8):	Taint - rozszerzenia narzędziowe Perla dla napiętnowanych danych
 Name:		perl-Taint
@@ -14,6 +14,7 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
 # NoSource0-md5:	e9b23bec1f15ee2f1e1d7309eb04ef92
 NoSource:	0
+URL:		http://search.cpan.org/dist/Taint/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
