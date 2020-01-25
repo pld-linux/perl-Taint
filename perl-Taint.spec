@@ -3,7 +3,6 @@
 %bcond_without	tests	# do not perform "make test"
 
 %define		pdir	Taint
-%include	/usr/lib/rpm/macros.perl
 Summary:	Taint - Perl utility extensions for tainted data
 Summary(pl.UTF-8):	Taint - rozszerzenia narzędziowe Perla dla napiętnowanych danych
 Name:		perl-Taint
